@@ -19,11 +19,20 @@ function App() {
     value: 55
   })
 
+  const p1 = 'hi';
+
+  const p2 = 'world';
+
+  const div = React.createElement('div', {
+    'className': 'text-grey'
+  }, p1, p2);
+
   return (
     <>
       {h1}
       {h2}
       {p}
+      {div}
       {input}
     </>
   );
