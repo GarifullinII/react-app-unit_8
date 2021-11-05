@@ -9,10 +9,17 @@ function App() {
     'className': 'text-orange' 
   }, 'header 2')
 
+  const p = React.createElement('p', {
+    'style': {
+      'color': 'red'
+    }
+  }, 'this is p');
+
   return (
     <>
       {h1}
       {h2}
+      {p}
     </>
   );
 }
