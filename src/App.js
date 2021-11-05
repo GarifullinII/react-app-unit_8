@@ -15,11 +15,16 @@ function App() {
     }
   }, 'this is p');
 
+  const input = React.createElement('input', {
+    value: 55
+  })
+
   return (
     <>
       {h1}
       {h2}
       {p}
+      {input}
     </>
   );
 }
