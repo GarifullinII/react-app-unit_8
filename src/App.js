@@ -20,12 +20,27 @@ function App() {
   })
 
   const p1 = 'hi';
-
   const p2 = 'world';
-
   const div = React.createElement('div', {
     'className': 'text-grey'
   }, p1, p2);
+
+  const input7 = React.createRef('');
+  const [val, setVal] = React.useState([]);
+  function getVal() {
+    if(input7.current.value.length > 0) {
+      let newVal = [...val];
+
+      newVal.push(input7.current.value);
+
+      setVal(newVal);
+
+      input7.current.value = '';
+    } else {
+      return false
+    }
+  }
+  
 
   return (
     <>
@@ -34,6 +49,13 @@ function App() {
       {p}
       {div}
       {input}
+      <div>
+        <input type="text" ref={input7} />
+        <button onClick={getVal}>Click</button>
+        <ul>
+          {val.map((item, index) => <li key={index}>{item}</li>)}
+        </ul>
+      </div>
     </>
   );
 }
